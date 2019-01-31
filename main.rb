@@ -39,4 +39,8 @@ get '/library' do
   erb :library
 end
 
+def delete_entry(game_id)
+  DB.execute("delete from Games where game_pk = #{game_id};")
+end
+
 
