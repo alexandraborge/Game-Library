@@ -14,9 +14,6 @@ DB.results_as_hash = true
 #   );
 # SQL
 
-# # Execute a few inserts
-#DB.execute("insert into Games(title) values('Code Names')")
-
 
 get '/' do
   @title = 'Welcome!'
@@ -33,6 +30,7 @@ end
 
 post '/submit' do
   @title = params['title']
+  DB.execute("insert into Games(title) values('#{@title}')")
   erb :submit
 end
 
