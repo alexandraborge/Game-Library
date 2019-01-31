@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Library</title>
+  </head>
+  <body>
+    <h3>My Games</h3>
+    <% @games.each do |game| %>
+      <div><%= game['game_pk'] %>: <%= game['title'] %></div>
+    <% end %>
+  </body>
+</html>
