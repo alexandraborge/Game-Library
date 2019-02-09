@@ -7,8 +7,13 @@
   </head>
   <body>
     <h3>My Games</h3>
-    <% @games.each do |game| %>
-      <div><%= game['game_pk'] %>: <%= game['title'] %> <button class="fa fa-trash"></button></div>
+    
+    <% @games.each do |game| %> 
+      <%= game['title'] %>
+      <form action='/remove_game' method='post'>
+        <input type='hidden' name='game_pk' value='<%= game['game_pk'] %>'>
+        <input type='submit'>
+      </form>
     <% end %>
     <a href='/'><button>Back to Home</button></a>
   </body>

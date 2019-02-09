@@ -1,5 +1,8 @@
+require 'sass'
 require 'sinatra'
 require "sqlite3"
+
+get('/styles.css'){ scss :styles }
 
 # SQLite3::Database.new "true_colors.db"
 
@@ -13,7 +16,6 @@ DB.results_as_hash = true
 #     title text
 #   );
 # SQL
-
 
 get '/' do
   @title = 'Welcome!'
@@ -35,12 +37,17 @@ post '/submit' do
 end
 
 get '/library' do
-  @games = DB.execute('select game_pk, title from Games')
+  @games = DB.execute('select game_pk, title from Games') || []
   erb :library
 end
 
-def delete_entry(game_id)
-  DB.execute("delete from Games where game_pk = #{game_id};")
+# TODO: Find out how to do a proper delete request in sinatra
+post '/remove_game' do
+  delete_game(params['game_pk'])
+  redirect '/library'
 end
 
-
+def delete_game(game_pk)
+  DB.execute("delete from Games where game_pk = #{game_pk};")
+end
+ 
