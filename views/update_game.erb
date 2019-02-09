@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <title>Update Game</title>
+        </head>
+        <body>
+            <h3>Update!</h3>
+            <form action='/update' method='post'>
+                <p>Title: <input type="text" name='new_title' placeholder="<%= @old_title %>"></p>
+                <input type="hidden" name='old_title' value="<%= @old_title %>">
+                <input type='submit'>
+            </form>
+        </body>
+    </html>
+</html>

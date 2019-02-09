@@ -37,17 +37,38 @@ post '/submit' do
 end
 
 get '/library' do
-  @games = DB.execute('select game_pk, title from Games') || []
+  @games = game_list
   erb :library
 end
 
-# TODO: Find out how to do a proper delete request in sinatra
 post '/remove_game' do
   delete_game(params['game_pk'])
   redirect '/library'
 end
 
+get '/update_game' do
+  erb :update_game
+end
+
+post '/update_game' do
+  @old_title = params['title']
+  erb :update_game
+end
+
+post '/update' do
+  update_game(params['new_title'], params['old_title'])
+  redirect '/library'
+end
+
+def game_list
+  DB.execute('select game_pk, title from Games') || []
+end
+
 def delete_game(game_pk)
   DB.execute("delete from Games where game_pk = #{game_pk};")
+end
+
+def update_game(new_title, old_title)
+  DB.execute("update Games set title = '#{new_title}' where title = '#{old_title}';")
 end
  

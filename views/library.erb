@@ -7,14 +7,25 @@
   </head>
   <body>
     <h3>My Games</h3>
-    
-    <% @games.each do |game| %> 
-      <%= game['title'] %>
-      <form action='/remove_game' method='post'>
-        <input type='hidden' name='game_pk' value='<%= game['game_pk'] %>'>
-        <input type='submit'>
-      </form>
-    <% end %>
+    <table>
+      <tbody>
+        <% @games.each do |game| %>
+          <tr>
+            <td><div><%= game['title'] %></td>
+            <td>
+              <form action='/remove_game' method='post'>
+                <input type='hidden' name='game_pk' value='<%= game['game_pk'] %>'><button class='fas fa-trash-alt' type='submit'></button>
+              </form>
+            </td>
+            <td>
+              <form action='/update_game' method='post'>
+                <input type='hidden' name='title' value='<%= game['title'] %>'><a href='/update_game'><button class='fas fa-pencil-alt' type='submit'></button></a>
+              </form>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
     <a href='/'><button>Back to Home</button></a>
   </body>
 </html>
