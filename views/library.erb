@@ -2,22 +2,29 @@
 <html lang="en" dir="ltr">
   <head>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link href="<%= url('/library.css') %>" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Major+Mono+Display" rel="stylesheet">
     <meta charset="utf-8">
     <title>Library</title>
   </head>
   <body>
-    <h3>My Games</h3>
+    <div><a href='/'><button class='home-button'>Home</button></a><h1>My Games</h1></div>
     <table>
+      <thead>
+        <th>Title</th>
+        <th></th>
+        <th></th>
+      </thead>
       <tbody>
         <% @games.each do |game| %>
           <tr>
             <td><div><%= game['title'] %></td>
-            <td>
+            <td class='remove-update-button'>
               <form action='/remove_game' method='post'>
                 <input type='hidden' name='game_pk' value='<%= game['game_pk'] %>'><button class='fas fa-trash-alt' type='submit'></button>
               </form>
             </td>
-            <td>
+            <td class='remove-update-button'>
               <form action='/update_game' method='post'>
                 <input type='hidden' name='title' value='<%= game['title'] %>'><a href='/update_game'><button class='fas fa-pencil-alt' type='submit'></button></a>
               </form>
@@ -26,6 +33,5 @@
         <% end %>
       </tbody>
     </table>
-    <a href='/'><button>Back to Home</button></a>
   </body>
 </html>

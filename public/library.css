@@ -1,0 +1,42 @@
+h1 {
+    font-family: 'Major Mono Display', monospace;
+    text-align: center;
+}
+
+.home-button {
+    color: orange;
+    border: 2px solid orange;
+    border-radius: 5px;
+    width: 100px;
+    height: 30px; 
+    font-weight: bold;
+}
+
+.home-button:hover {
+    background-color: black;
+    color: white;
+}
+
+table {
+    width: 500px;
+    border-right: 5px solid orange;
+    border-top: 5px solid orange;
+    margin-top: 80px;
+    margin-left: 380px;
+}
+
+th {
+    text-align: left;
+    padding: 7px;
+    font-size: 24px;
+    font-family: 'Major Mono Display', monospace;
+}
+
+td {
+    padding: 7px;
+    border-top: 1px dotted orange
+}
+
+.remove-update-button {
+    width: 30px;
+}

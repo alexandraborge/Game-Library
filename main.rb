@@ -2,8 +2,6 @@ require 'sass'
 require 'sinatra'
 require "sqlite3"
 
-get('/styles.css'){ scss :styles }
-
 # SQLite3::Database.new "true_colors.db"
 
 DB = SQLite3::Database.open "true_colors.db"
@@ -18,7 +16,7 @@ DB.results_as_hash = true
 # SQL
 
 get '/' do
-  @title = 'Welcome!'
+  @title = 'Games Games Games!'
   erb :index
 end
 

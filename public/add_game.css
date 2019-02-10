@@ -3,6 +3,20 @@ h1 {
     font-family: 'Major Mono Display', monospace;
 }
 
+.home-button {
+    color: orange;
+    border: 2px solid orange;
+    border-radius: 5px;
+    width: 100px;
+    height: 30px; 
+    font-weight: bold;
+}
+
+.home-button:hover {
+    background-color: black;
+    color: white;
+}
+
 .form {
     border: 3px solid orange;
     width: 300px;
