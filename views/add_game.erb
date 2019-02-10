@@ -2,13 +2,22 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <link href="<%= url('/add_game.css') %>" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Major+Mono+Display" rel="stylesheet">
     <title>Add a Game</title>
   </head>
   <body>
-    <h3>Add a Game!</h3>
-    <form class="add" action="/submit" method="post">
-      <p>Title: <input type="text" name='title'></p>
-      <input type='submit'>
+    <h1>Add a Game!</h1>
+    <form class="form" action="/submit" method="post">
+      <table>
+        <tbody>
+          <tr>
+            <td>Title:</td>
+            <td><input class='text-box' type="text" name='title'></td>
+          </tr>
+        </tbody>
+      </table>
+      <input class='submit-button' type='submit'>
     </form>  
   </body>
 </html>
