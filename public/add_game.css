@@ -4,8 +4,8 @@ h1 {
 }
 
 .home-button {
-    color: orange;
-    border: 2px solid orange;
+    color: black;
+    border: 2px solid black;
     border-radius: 5px;
     width: 100px;
     height: 30px; 
@@ -18,13 +18,13 @@ h1 {
 }
 
 .form {
-    border: 3px solid orange;
+    border: 3px solid black;
     width: 300px;
     height: 200px;
-    margin-left: 480px;
     margin-top: 100px;
     border-radius: 5px;
     font-family: 'Major Mono Display', monospace;
+    margin-left: 41%;
 }
 
 td {
@@ -32,15 +32,15 @@ td {
 }
 
 .text-box {
-    border: 1px solid orange;
+    border: 1px solid black;
     width: 180px;
 }
 
 .submit-button {
     margin-left: 100px;
     margin-top: 100px;
-    color: orange;
-    border: 2px solid orange;
+    color: black;
+    border: 2px solid black;
     border-radius: 5px;
     width: 100px;
     height: 30px; 

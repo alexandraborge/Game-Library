@@ -4,8 +4,8 @@ h1 {
 }
 
 .home-button {
-    color: orange;
-    border: 2px solid orange;
+    color: black;
+    border: 2px solid black;
     border-radius: 5px;
     width: 100px;
     height: 30px; 
@@ -19,10 +19,10 @@ h1 {
 
 table {
     width: 500px;
-    border-right: 5px solid orange;
-    border-top: 5px solid orange;
+    border-right: 5px solid rgb(199, 143, 182);
+    border-top: 5px solid rgb(199, 143, 182);
     margin-top: 80px;
-    margin-left: 380px;
+    margin-left: 35%;
 }
 
 th {
@@ -34,9 +34,9 @@ th {
 
 td {
     padding: 7px;
-    border-top: 1px dotted orange
+    border-top: 1px dotted rgb(199, 143, 182)
 }
 
 .remove-update-button {
-    width: 30px;
+    width: 40px;
 }

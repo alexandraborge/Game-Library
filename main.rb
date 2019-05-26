@@ -1,4 +1,3 @@
-require 'sass'
 require 'sinatra'
 require "sqlite3"
 

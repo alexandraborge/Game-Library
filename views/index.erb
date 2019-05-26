@@ -2,14 +2,15 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <link href="<%= url('/index.css') %>" rel="stylesheet" type="text/css" />
     <title>Homepage-Game Library</title>
   </head>
   <body>
     <div class="nav-box">
-      <h3><%= @title %></h3>
-      <a href='/library'><button type="button" name="view">View Games</button></a>
-      <a href='add_game'><button type="button" name="add_new">Add New Game</button></a>
-      <a href='random'><button type="button" name="random">Random Game</button></a>
+      <h1><%= @title %></h1>
+      <a href='/library'><button class="view-button button">View Games</button></a>
+      <a href='add_game'><button class="add-button button">Add New Game</button></a>
+      <a href='random'><button class="random-button button">Random Game</button></a>
     </div>
   </body>
 </html>
