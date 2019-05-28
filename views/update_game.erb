@@ -2,13 +2,14 @@
     <html>
         <head>
             <title>Update Game</title>
+            <link href="<%= url('/update-game.css') %>" rel="stylesheet" type="text/css" />
         </head>
         <body>
-            <h3>Update!</h3>
+            <h1>Update!</h1>
             <form action='/update' method='post'>
                 <p>Title: <input type="text" name='new_title' placeholder="<%= @old_title %>"></p>
                 <input type="hidden" name='old_title' value="<%= @old_title %>">
-                <input type='submit'>
+                <input type='submit' class='submit-button'>
             </form>
         </body>
     </html>
